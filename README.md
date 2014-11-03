@@ -41,7 +41,7 @@ To run this logstash image, you have to first choose one of three Elasticsearch 
 To fetch and start a container running logstash and the embedded Elasticsearch server, simply execute:
 
     $ docker run -d \
-      -e LOGSTASH_CONFIG_URL= 
+      -e LOGSTASH_CONFIG_URL=https://raw.githubusercontent.com/marcelmaatkamp/docker-logstash/develop/logstash.conf 
       -p 9292:9292 \
       -p 9200:9200 \
       marcelmaatkamp/docker-logstash
