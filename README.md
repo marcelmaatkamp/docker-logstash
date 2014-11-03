@@ -4,9 +4,9 @@ This is a highly configurable logstash (1.4.2) image running elasticsearch (1.1.
 
 ## Optional, build and run the image from source
 
-If you prefer to build from source rather than use the [pblittle/docker-logstash][1] trusted build published to the public Docker Registry, execute the following:
+If you prefer to build from source rather than use the [marcelmaatkamp/docker-logstash][1] trusted build published to the public Docker Registry, execute the following:
 
-    $ git clone https://github.com/pblittle/docker-logstash.git
+    $ git clone https://github.com/marcelmaatkamp/docker-logstash.git
     $ cd docker-logstash
     $ make build
     $ make <options> run
@@ -43,7 +43,7 @@ To fetch and start a container running logstash and the embedded Elasticsearch s
     $ docker run -d \
       -p 9292:9292 \
       -p 9200:9200 \
-      pblittle/docker-logstash
+      marcelmaatkamp/docker-logstash
 
 If you want to use your own config file rather than the default, don't forget the `LOGSTASH_CONFIG_URL` environment variable as noted above:
 
@@ -51,7 +51,7 @@ If you want to use your own config file rather than the default, don't forget th
       -e LOGSTASH_CONFIG_URL=<your_logstash_config_url> \
       -p 9292:9292 \
       -p 9200:9200 \
-      pblittle/docker-logstash
+      marcelmaatkamp/docker-logstash
 
 ### Use a linked container running Elasticsearch
 
@@ -62,7 +62,7 @@ If you want to link to another container running elasticsearch rather than use t
       --link <your_es_container_name>:es
       -p 9292:9292
       -p 9200:9200
-      pblittle/docker-logstash
+      marcelmaatkamp/docker-logstash
 
 To have you the linked elasticsearch container's `bind_host` and `port` automatically detected, you will need to create an `ES_HOST` and `ES_PORT` placeholder in the `elasticsearch` definition in your logstash config file. For example:
 
